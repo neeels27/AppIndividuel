@@ -14,6 +14,7 @@ import Counter from './src/components/counter'
 
 import Header from './src/components/header'
 import TodoList from './src/components/todoList'
+import Trombi from './src/components/trombi'
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark'
@@ -25,12 +26,7 @@ const App = () => {
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      {/* <Header label="Coco"></Header>
-     <Header label="Vive la France"></Header>
-     <Header label="Vive l'Algerie"></Header>
-     <Header label="Vive le Maroc"></Header>
-     <Counter></Counter> */}
-      <TodoList />
+      <Trombi />
     </SafeAreaView>
   )
 }
