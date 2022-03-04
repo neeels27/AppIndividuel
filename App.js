@@ -1,4 +1,5 @@
 import React from 'react'
+import { ThemeProvider } from 'styled-components'
 import {
   SafeAreaView,
   ScrollView,
@@ -13,21 +14,26 @@ import { Colors } from 'react-native/Libraries/NewAppScreen'
 import Counter from './src/components/counter'
 
 import Header from './src/components/header'
+import StyledExamples from './src/components/styledExamples'
 import TodoList from './src/components/todoList'
 import Trombi from './src/components/trombi'
+
+import { lightTheme, darkTheme } from './src/config/theme'
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark'
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter
-  }
+  // const backgroundStyle = {
+  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter
+  // }
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <Trombi />
-    </SafeAreaView>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+      <SafeAreaView>
+        {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} /> */}
+        <StyledExamples />
+      </SafeAreaView>
+    </ThemeProvider>
   )
 }
 
