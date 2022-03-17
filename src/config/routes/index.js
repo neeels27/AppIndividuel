@@ -3,8 +3,8 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import Characters from '../../screens/characters'
 import HomeStack from './homeStack'
+import CharactersStack from './charactersStack'
 
 const BottomTab = createBottomTabNavigator()
 
@@ -13,7 +13,7 @@ const Routes = () => {
     <NavigationContainer>
       <BottomTab.Navigator>
         <BottomTab.Screen name='HomeStack' component={HomeStack} />
-        <BottomTab.Screen name='Characters' component={Characters} />
+        <BottomTab.Screen name='CharactersStack' component={CharactersStack} />
       </BottomTab.Navigator>
     </NavigationContainer>
   )
