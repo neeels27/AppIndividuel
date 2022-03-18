@@ -1,20 +1,22 @@
 import React from 'react'
 
 import { NavigationContainer } from '@react-navigation/native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import FlashMessage from 'react-native-flash-message'
 
-import HomeStack from './homeStack'
-import CharactersStack from './charactersStack'
+import LoginStack from './loginStack'
+import ProtectedStack from './protectedStack'
 
-const BottomTab = createBottomTabNavigator()
+const Stack = createNativeStackNavigator()
 
 const Routes = () => {
   return (
     <NavigationContainer>
-      <BottomTab.Navigator>
-        <BottomTab.Screen name='HomeStack' component={HomeStack} />
-        <BottomTab.Screen name='CharactersStack' component={CharactersStack} />
-      </BottomTab.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {/* <Stack.Screen name='LoginStack' component={LoginStack} /> */}
+        <Stack.Screen name='ProtectedStack' component={ProtectedStack} />
+      </Stack.Navigator>
+      <FlashMessage position='top' />
     </NavigationContainer>
   )
 }
