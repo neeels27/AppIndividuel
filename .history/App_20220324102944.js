@@ -3,7 +3,6 @@ import { ThemeProvider } from 'styled-components'
 import { StyleSheet, useColorScheme } from 'react-native'
 
 // Importer les icones Ionicone
-import Icon from 'react-native-ionicons'
 
 import { lightTheme, darkTheme } from './src/config/theme'
 import Routes from './src/config/routes'
